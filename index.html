@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Jani ürgeszámlálója</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="main.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link rel="shortcut icon" type="image/x-icon" href="assets/urge_favicon.png">
+</head>
+
+<body>
+  <header>
+    <div class="urge-header">
+      <div>
+        <img src="assets/urge-favicon_2.png" alt="urge">
+      </div>
+      <div id="title">
+        <h2>Jani ürgeszámlálója</h2>
+      </div>
+    </div>
+  </header>
+  <div class="content">
+    <div class="qa">
+    </div>
+    <div class="qa">
+      <p>Az ürgepopuláció egyedszáma: <br><span id="demo"></span></p>
+
+    </div>
+  </div>
+  <script>
+    const MIN_RANDOM = 2000;
+    const MAX_RANDOM = 5000;
+    const RANDOM_STEP = 1;
+
+    function generateRandom(min, max, step) {
+      const randomNum = min + Math.random() * (max - min);
+      return Math.round(randomNum / step) * step;
+    }
+
+    function myRandom() {
+      return generateRandom(MIN_RANDOM, MAX_RANDOM, RANDOM_STEP);
+    }
+    document.getElementById("demo").innerHTML = myRandom();
+  </script>
+</body>
+
+</html>
